@@ -21,3 +21,6 @@ const opC = (cb) => {
   }, 125)
 }
 
+opA(print)
+opB(print)
+opC(print)
