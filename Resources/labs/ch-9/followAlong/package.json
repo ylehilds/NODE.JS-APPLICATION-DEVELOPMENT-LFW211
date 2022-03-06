@@ -1,0 +1,18 @@
+{
+  "name": "followalong",
+  "version": "1.0.0",
+  "to_make_work_as_module_add_the_following_at_same_level_as_name_or_version_etc": {
+    "type": "module"
+  },
+  "description": "",
+  "main": "closeEvent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "promises": "^0.2.5",
+    "timers": "^0.1.1"
+  }
+}
