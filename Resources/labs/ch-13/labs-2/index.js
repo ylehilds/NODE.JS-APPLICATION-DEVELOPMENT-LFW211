@@ -51,7 +51,12 @@ function exercise (project) {
       // TODO - only set the answer variable if the filepath
       // is both newly created AND does not point to a directory
 
-      answer = filepath
+      const typeLabel = stat.isDirectory() ? 'dir' : 'file'
+      if (files.has(filename) === false && typeLabel === 'file') {
+        files.add(filename)
+        answer = filepath
+      }
+
     } catch (err) {
 
     } 
