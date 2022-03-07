@@ -18,8 +18,20 @@ const writable = createWritable()
 // TODO: replace the pass through stream 
 // with a transform stream that uppercases
 // incoming characters
-const transform = new PassThrough()
 
+const transform = new Transform({ // method 1
+  decodeStrings: false,
+  transform (chunk, enc, next) {
+    next(null, chunk.toUpperCase());
+  }
+})
+
+// const transform = new Transform({ // method 2
+//   decodeStrings: false
+// })
+// transform._transform = function(chunk, encoding, done) {
+//   done(null, chunk.toUpperCase());
+// };
 pipeline(readable, transform, writable, (err) => {
   assert.ifError(err)
   assert.deepStrictEqual(writable.sink, ['A', 'B', 'C'])
