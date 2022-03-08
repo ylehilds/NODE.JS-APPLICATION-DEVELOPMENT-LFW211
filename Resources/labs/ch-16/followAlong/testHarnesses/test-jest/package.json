@@ -1,14 +1,14 @@
 {
-  "name": "labs-2",
+  "name": "testharnesses",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "add.js",
   "scripts": {
     "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "devDependencies": {
     "jest": "^27.5.1"
   }

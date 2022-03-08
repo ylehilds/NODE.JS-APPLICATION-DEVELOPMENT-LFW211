@@ -1,0 +1,5 @@
+const assert = require('assert')
+const add = require('./add')
+const result = add(2, 2)
+assert.equal(typeof result, 'number')
+assert.equal(result, 4)
