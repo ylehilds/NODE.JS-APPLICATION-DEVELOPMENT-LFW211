@@ -1,0 +1,15 @@
+{
+  "name": "testharnesses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^16.0.0"
+  }
+}
