@@ -32,7 +32,7 @@ function test (scenario = 0) {
   const s1 = cp.spawnSync(node, [__filename], {
     env: {SCENARIO: 1},
   })
-  
+
   equal(s1.stdout.toString().trim(), 'test', 'should inherit stdout')
 
   const s2 = cp.spawnSync(node, [__filename], {
