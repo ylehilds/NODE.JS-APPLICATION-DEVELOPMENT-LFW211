@@ -4,3 +4,4 @@ function f (n = 99) {
 }
 f()
 
+// terminal command: node --stack-trace-limit=200 will-throw.js
