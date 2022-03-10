@@ -17,3 +17,8 @@ assert(rfdc === '1.1.3', 'rfdc should be at exactly 1.1.3')
 const { range } = new semver.Range(fastify)
 assert(range === '>=2.0.0 <3.0.0-0', 'fastify should be greater than or equal to 2.0.0, while accepting all future MINOR and PATCH versions')
 console.log('passed')
+
+// #1 to Install fastify at greater than or equal to 2.0.0, while accepting all future MINOR and PATCH versions
+// #2 Install rfdc at exactly version 1.1.3
+// terminal commands:
+// npm i fastify@2.0.0 && npm i --save-exact rfdc@1.1.3

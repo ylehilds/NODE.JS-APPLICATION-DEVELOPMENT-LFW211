@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "commandsUsed": "npm -i --save-dev nonsynchronous"
   },
   "keywords": [],
   "author": "",
