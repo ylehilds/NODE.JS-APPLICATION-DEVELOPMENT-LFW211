@@ -1,35 +1,31 @@
 'use strict'
 const { promisify } = require('util')
 
-const print = (err, contents) => {
+const print = (err, contents) => { 
   if (err) console.error(err)
-  else console.log(contents)
+  else console.log(contents) 
 }
 
-const opA = (cb) => {
-  setTimeout(() => {
+const opA = async (cb) => {
+  await new Promise((resolve) => setTimeout(resolve, 500))
     cb(null, 'A')
-  }, 500)
 }
 
-const opB = (cb) => {
-  setTimeout(() => {
+const opB = async (cb) => {
+  await new Promise((resolve) => setTimeout(resolve, 250))
     cb(null, 'B')
-  }, 250)
 }
 
-const opC = (cb) => {
-  setTimeout(() => {
+const opC = async (cb) => {
+  await new Promise((resolve) => setTimeout(resolve, 125))
     cb(null, 'C')
-  }, 125)
 }
 
 async function run () {
-  await promisify(opA)(print)
-  await promisify(opB)(print)
-  await promisify(opC)(print)
+  await opA(print)
+  await opB(print)
+  await opC(print)
 }
 
 run()
 
-// couldn't get to work , but the first serial.js works just fine!!!!

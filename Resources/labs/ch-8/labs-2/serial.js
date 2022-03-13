@@ -1,31 +1,56 @@
 'use strict'
 const { promisify } = require('util')
 
-const print = (err, contents) => { 
+const print = (err, contents) => {
   if (err) console.error(err)
-  else console.log(contents) 
+  else console.log(contents)
 }
 
-const opA = async (cb) => {
-  await new Promise((resolve) => setTimeout(resolve, 500))
+const opA = (cb) => {
+  setTimeout(() => {
     cb(null, 'A')
+  }, 500)
 }
 
-const opB = async (cb) => {
-  await new Promise((resolve) => setTimeout(resolve, 250))
+const opB = (cb) => {
+  setTimeout(() => {
     cb(null, 'B')
+  }, 250)
 }
 
-const opC = async (cb) => {
-  await new Promise((resolve) => setTimeout(resolve, 125))
+const opC = (cb) => {
+  setTimeout(() => {
     cb(null, 'C')
+  }, 125)
 }
 
-async function run () {
-  await opA(print)
-  await opB(print)
-  await opC(print)
+// solution 1
+
+const pOpA = promisify(opA)
+const pOpB = promisify(opB)
+const pOpC = promisify(opC)
+
+const operate = async () => {
+  print(null, await pOpA())
+  print(null, await pOpB())
+  print(null, await pOpC())
 }
 
-run()
+operate()
 
+// --------------------------------------------------------------------------------------------------------------------
+
+// solution 2
+
+// const printHelper = (contents) => print(null, contents)
+//
+// const pOpA = promisify(opA)
+// const pOpB = promisify(opB)
+// const pOpC = promisify(opC)
+// pOpA()
+//   .then(printHelper)
+//   .then(() => pOpB())
+//   .then(printHelper)
+//   .then(() => pOpC())
+//   .then(printHelper)
+//
