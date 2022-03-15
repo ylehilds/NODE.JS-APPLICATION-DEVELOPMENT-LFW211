@@ -1,5 +1,7 @@
 'use strict'
 
+const childProc = require('child_process')
+
 function exercise (myEnvVar) {
   // TODO return a child process with
   // a single environment variable set 
@@ -7,7 +9,7 @@ function exercise (myEnvVar) {
   // environment variable's value should 
   // be the value of the myEnvVar parameter 
   // passed to this exercise function
-  return require('child_process').spawnSync(process.argv[0], ['child.js'], {
+  return childProc.spawnSync(process.argv[0], ['child.js'], {
     env: {MY_ENV_VAR: myEnvVar}
   })
 }
