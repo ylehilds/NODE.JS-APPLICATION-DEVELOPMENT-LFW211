@@ -26,8 +26,8 @@ const opC = (cb) => {
 
 // solution 1
 
-const pOpA = promisify(opA)
-const pOpB = promisify(opB)
+const pOpA = promisify(opA) // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
+const pOpB = promisify(opB) // because all of these promises return ('null', <A/B/C>) returns no errors "null", then the data gets returned automatically and assigns it to pOpA/pOpB/pOpC
 const pOpC = promisify(opC)
 
 const operate = async () => {
