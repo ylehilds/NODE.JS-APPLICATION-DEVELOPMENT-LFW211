@@ -19,16 +19,11 @@ const writable = createWritable()
 // with a transform stream that uppercases
 // incoming characters
 
-const createTransformStream = () => { // method 1
-  return new Transform({
-    decodeStrings: false,
-    transform (chunk, enc, next) {
-      next(null, chunk.toUpperCase())
-    }
-  })
-}
-
-const transform = createTransformStream()
+const transform = new Transform({
+  transform(chunk, encoding, callback) {
+    callback(null, String(chunk).toUpperCase());
+  }
+});
 
 // const transform = new Transform({ // method 1.5
 //   decodeStrings: false,
@@ -43,6 +38,7 @@ const transform = createTransformStream()
 // transform._transform = function(chunk, encoding, done) {
 //   done(null, chunk.toUpperCase());
 // };
+
 pipeline(readable, transform, writable, (err) => {
   assert.ifError(err)
   assert.deepStrictEqual(writable.sink, ['A', 'B', 'C'])
