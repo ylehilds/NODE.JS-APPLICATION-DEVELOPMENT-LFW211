@@ -5,5 +5,7 @@ test('throw when output is not uppercase', async () => {
 })
 
 test('throw when inputs is not string', async () => {
-  expect(() => uppercase(5)).toThrow('input must be a string')
+  expect(() => {
+    uppercase(5)
+  }).toThrow('input must be a string')
 })
