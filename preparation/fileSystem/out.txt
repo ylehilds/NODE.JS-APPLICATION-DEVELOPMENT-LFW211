@@ -1,3 +1,5 @@
+// Task: Write the content of all files in a directory into a single file
+
 'use strict'
 const fs = require('fs')
 const path = require('path')
@@ -15,6 +17,8 @@ for (let file of files) {
     console.error(err)
   }
 }
+// Task: Write a program that reads all directories and files and prints out the absolute path for all of them
+
 'use strict'
 const fs = require('fs')
 const path = require('path')
@@ -27,5 +31,5 @@ for (let file of files) {
     console.error(err)
   }
 }
-'use strict'
-'use strict'
+test 1 file contents: everything is awesome!
+test 2 file contents: to be or not to be is the question!

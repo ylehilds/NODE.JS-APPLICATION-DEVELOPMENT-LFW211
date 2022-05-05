@@ -1,4 +1,5 @@
 // Task: Write a program that reads all directories and files and prints out the absolute path for all of them
+
 'use strict'
 const fs = require('fs')
 const path = require('path')
