@@ -1,3 +1,5 @@
+// Task: Write the content of all files in a directory into a single file
+
 'use strict'
 const fs = require('fs')
 const path = require('path')
